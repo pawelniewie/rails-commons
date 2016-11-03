@@ -1,6 +1,6 @@
 # Common stuff for Rails applications
 
-## Adding uses to a mailing list
+## Adding user to a mailing list
 
 Update `Gemfile` with:
 
