@@ -1,5 +1,5 @@
 class SubscribeJob < ApplicationJob
-  def perform(email)
+  def perform(email, merge_fields = {})
     lower_case_md5_hashed_email_address = Digest::MD5.hexdigest(email.downcase)
 
     gb = Gibbon::Request.new
@@ -7,7 +7,7 @@ class SubscribeJob < ApplicationJob
       body: {
         email_address: email,
         status_if_new: 'subscribed',
-        merge_fields: {},
+        merge_fields: merge_fields || {},
         interests: interests
       })
   end
