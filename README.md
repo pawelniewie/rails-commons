@@ -10,7 +10,7 @@ gem 'gibbon'
 
 Add following entries to `secrets.yml`
 
-```ruby
+```yaml
 mailchimp_key: <%= ENV['MAILCHIMP_KEY'] %>
 mailchimp_list_id: <%= ENV['MAILCHIMP_LIST_ID'] %>
 mailchimp_interest_ids: <%= ENV['MAILCHIMP_INTEREST_IDS'] %>
