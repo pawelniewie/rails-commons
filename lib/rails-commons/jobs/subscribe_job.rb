@@ -1,6 +1,6 @@
 module RailsCommons
 
-  class SubscribeJob < ApplicationJob
+  class SubscribeJob < ActiveJob::Base
     def perform(email, merge_fields = {})
       lower_case_md5_hashed_email_address = Digest::MD5.hexdigest(email.downcase)
 
