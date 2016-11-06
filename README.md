@@ -26,6 +26,14 @@ Gibbon::Request.logger = Rails.logger
 
 Call `SubscribeJob.perform_later('email@me.com')` to add a subscriber to your list.
 
+## Crashing job for testing
+
+```ruby
+RailsCommons::CrashingJob.perform_later(id: 123)
+```
+
+So you can test out ErrBit/AirBrake/NewRelic, etc. 
+
 ## Requirements
 
 Ruby 2.0+, ActiveRecord 5+, Rails 5+
