@@ -26,6 +26,20 @@ Gibbon::Request.logger = Rails.logger
 
 Call `SubscribeJob.perform_later('email@me.com')` to add a subscriber to your list.
 
+## MailChimp helper tasks
+
+List all mailing lists for you account: 
+
+```
+rails commons:mailchimp:lists
+```
+
+All lists with interests included:
+
+```
+rails commons:mailchimp:interests 
+```
+
 ## Crashing job for testing
 
 ```ruby
