@@ -5,7 +5,7 @@ namespace :commons do
     task :lists => :environment do
       gibbon = Gibbon::Request.new
 
-      lists = gibbon.lists.retrieve(params: { 'fields': 'lists.id,lists.name' }).fetch('lists', [])
+      lists = gibbon.lists.retrieve(params: { 'fields': 'lists.id,lists.name' }).body.fetch('lists', [])
       lists.each do |list|
         puts "#{list['id']} #{list['name']}"
       end
@@ -15,14 +15,14 @@ namespace :commons do
     task :interests => :environment do
       gibbon = Gibbon::Request.new
 
-      lists = gibbon.lists.retrieve(params: { 'fields': 'lists.id,lists.name' }).fetch('lists', []).map do |list|
+      lists = gibbon.lists.retrieve(params: { 'fields': 'lists.id,lists.name' }).body.fetch('lists', []).map do |list|
         list_id = list['id']
 
-        categories = gibbon.lists(list_id).interest_categories.retrieve.fetch('categories', []).map do |category|
+        categories = gibbon.lists(list_id).interest_categories.retrieve.body.fetch('categories', []).map do |category|
 
           interests = gibbon
             .lists(list_id)
-            .interest_categories(category['id']).interests.retrieve.fetch('interests', []).map do |interest|
+            .interest_categories(category['id']).interests.retrieve.body.fetch('interests', []).map do |interest|
 
             OpenStruct.new(id: interest['id'], name: interest['name'])
           end
