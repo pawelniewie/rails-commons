@@ -1,3 +1,5 @@
+require 'gibbon'
+
 module RailsCommons
 
   class SubscribeJob < ActiveJob::Base
@@ -15,7 +17,7 @@ module RailsCommons
     end
 
     def interests
-      Hash[(Rails.application.secrets.mailchimp_interest_ids || []).map { |_| [_, true] }]
+      Hash[(Array(Rails.application.secrets.mailchimp_interest_ids) || []).map { |_| [_, true] }]
     end
   end
 
