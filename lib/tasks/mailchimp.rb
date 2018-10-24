@@ -1,3 +1,5 @@
+require 'gibbon'
+
 namespace :commons do
   namespace :mailchimp do
 
