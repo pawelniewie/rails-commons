@@ -11,7 +11,7 @@ module RailsCommons
         body: {
           email_address: email,
           status_if_new: 'subscribed',
-          merge_fields: merge_fields || {},
+          merge_fields: merge_fields.compact || {},
           interests: interests
         })
     end
