@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   s.add_dependency('gibbon', '>= 3.2.0')
 
   s.add_development_dependency('rake')
+  s.add_development_dependency('rack', '~> 2.0.6')
+  s.add_development_dependency('loofah', '~> 2.2.3')
   s.add_development_dependency('activerecord', '>= 4.1.0')
   s.add_development_dependency('bundler')
   s.add_development_dependency('generator_spec')
