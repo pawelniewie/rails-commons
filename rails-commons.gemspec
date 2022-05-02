@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.files = Dir['CHANGELOG', 'README.md', 'MIT-LICENSE', 'lib/**/*']
   s.require_path = 'lib'
 
-  s.add_dependency('gibbon', '>= 3.2.0')
+  s.add_dependency('gibbon', '>= 3.4.4')
 
   s.add_development_dependency('rake')
   s.add_development_dependency('rack', '~> 2.1.4')
